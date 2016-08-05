@@ -1,0 +1,68 @@
+
+Pour faire tourner un scrip ruby dans le console : $ ruby nomscript.rb
+# <== Pour écrire commentaires 
+Si je veux accéder au calculateur ruby dans la console, je tape $ irb. Pour en ressortir : quit()
+
+Symboles math comme JS : + - / * %(modulo) < > <= >=
+!! Attention, par défaut ruby ne fera que des calculs en chiffres ronds. Si je veux du résultat à virgule je dois utiliser un "floating point" ou "." pour partir dans les décimals. 
+
+"Puts" et "Print" marchent à peu près de la même manière, à la différence que puts fait des retour à la ligne (\n). 
+
+Pour créer variables, écriture simple : var_name = varvalue
+On peut utiliser des multiplicateurs (*) sur les strings et les variables, ça marche comme le (+).
+    ex : puts "Salut" * 3   => Salut Salut Salut
+    ex : car = 4    people = 3  people_total = car * people
+
+Pour intégrer du code Ruby dans une string :
+
+#{code ruby}        => écriture "classique"
+    ex : puts "Salut je veux savoir si tu as #{4+9+6}€ à me prêter"
+
+%{code ruby}        => Utilisé pour les "format string". Pour réutiliser avec différents code.
+    ex : Va s'utilier un peu comme une fonction.
+    On définit avec synthaxe : formatter = "%{first} %{second}" 
+    Puis utilisation sous la forme : 
+    puts formatter % {first:148, second: "Salut connard"}
+
+
+"""     : Permet d'écrite plusieurs lignes des string d'affilé tant que la string est enfermé entre """ et """ (pas d'espaces entre les ")
+\n : Renvoie à la ligne dans une string.
+
+To escape :
+" => \"
+' => \'
+\ => \\
+"tab" => \t
+
+Pour demander input from user : var_name = gets.chomp ou var_name = gets
+
+to_i => convertir en nombre entier
+to_f => idem mais décimal
+
+ARGV    : Argument variable  => This variable holds the arguments you pass to your Ruby script when you run it.
+ex : Dans le code : first, second, third = ARGV (1)
+    It "unpacks" the argument variable into the 3 variables first, second & third.
+    ARGV will correspond to the variable argument input in the command line.
+    ex: $ ruby ex13.rb potato 14 blabla
+    ex13.rb is the argument, potato, 14 & blabla are the argument variable. In (1) we would then have : #{first} = potato, #{second} = 14 and #{third} = blabla.
+  The arguments written in command line come as strings, so need to use yo_i if i want to make some math.
+  !! ARGV et get.chomped ne marchent pas ensemble, à la place il faut utiliser $stdin.gets.chomp
+  On peut utiliser ARGV comme un arrêt, par exemple : var_name = ARGV.first va récupérer le premier argument.
+  
+prompt = 'n'importe quoi' : Permet de remplacer par ce qu'on veut "l'affichage" du prompt.
+open    : Command pour ouvrir fichier, utiliser sous la forme open(filename). + d'infos avec : ri "File#open"
+    ex: var = open(filename)
+    !!! Open ne renvoit pas le contenu du fichier, ça crée un file object.
+read    : Fonction
+    ex : print file_name.read
+
+close   : Closes the file. Like File->Save.. in your editor.
+read    : Reads the contents of the file. You can assign the result to a variable.
+readline    : Reads just one line of a text file.
+truncate    : Empties the file. Watch out if you care about the file.
+write('stuff')  : Writes "stuff" to the file.
+  
+
+    
+
+     
